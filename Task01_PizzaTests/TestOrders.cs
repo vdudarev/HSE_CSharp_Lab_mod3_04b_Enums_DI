@@ -18,10 +18,10 @@ namespace PizzaTests
             pizzeria.DeliverIngredient(Ingredients.Anchovies, 1);
             pizzeria.DeliverIngredient(Ingredients.TomatoSauce, 1);
 
-            // Первая пицца успешно создается.
+            // РџРµСЂРІР°СЏ РїРёС†С†Р° СѓСЃРїРµС€РЅРѕ СЃРѕР·РґР°РµС‚СЃСЏ.
             Assert.AreEqual(pizzeria.MakePizza(new PizzaSicilian()).Name, "Sicilian");
 
-            // Вторая пицца не создается из-за нехватки ингредиентов.
+            // Р’С‚РѕСЂР°СЏ РїРёС†С†Р° РЅРµ СЃРѕР·РґР°РµС‚СЃСЏ РёР·-Р·Р° РЅРµС…РІР°С‚РєРё РёРЅРіСЂРµРґРёРµРЅС‚РѕРІ.
             Assert.ThrowsException<PizzaException>(() => pizzeria.MakePizza(new PizzaSicilian()));
         }
 
@@ -34,7 +34,7 @@ namespace PizzaTests
             pizzeria.DeliverIngredient(Ingredients.Ham, 1);
             pizzeria.DeliverIngredient(Ingredients.TomatoSauce, 1);
 
-            // Не хватает ингредиента.
+            // РќРµ С…РІР°С‚Р°РµС‚ РёРЅРіСЂРµРґРёРµРЅС‚Р°.
             Assert.ThrowsException<PizzaException>(() => pizzeria.MakePizza(new PizzaSicilian()));
         }
 
